@@ -1,0 +1,194 @@
+<br>
+
+<div class="form">
+
+  <div class="buttons">
+    <label for="chbox" class="login btn"><span class="customer_btn"><b>Customer</b></span></label>
+    <label for="chbox" class="SignUp btn"><span class="bussiness_btn"><b>Retailer</b></span></label>
+  </div>
+
+  <input type="checkbox" id="chbox">
+  <div class="layer"></div>
+  <div class="layer2"></div>
+  <br>
+  
+
+
+  <div class="container customer_form">
+    <div class="row topRow">
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 loginCol nopadding">
+
+
+        <h3 class="loginHeading">
+          Welcome Back!
+        </h3>
+
+        <p class="loginPara">
+
+          To keep connected <br>
+          with us please login with
+          your personal info
+
+        </p> <br>
+
+        <button class="loginBtn" (click)="goToLogin()">Log In</button>
+
+
+
+
+
+
+      </div>
+      <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 colRight">
+
+        <h1 class="signupHeading">
+          Create Account
+
+          <div *ngIf="error" class="error">
+            <div class="text-danger">
+                {{message}}
+            </div>
+        </div>
+
+        </h1>
+
+        
+        <form class="signupForm" [formGroup]="userSignupForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col">
+              <input formControlName="name" type="text" class="form-control inputFields" placeholder="Name">
+              <div *ngIf="submitted && userSignupForm.controls['name'].errors" class="error">
+                <div class="text-danger"  *ngIf="userSignupForm.controls['name'].errors['required']">
+                    Name is required
+                </div>
+            </div>
+            </div>
+            <div class="col">
+              <input formControlName="email" type="text" class="form-control inputFields" placeholder="Email">
+              <div *ngIf="submitted && userSignupForm.controls['email'].errors" class="error">
+                <div class="text-danger"  *ngIf="userSignupForm.controls['email'].errors['required']">
+                    Email is required
+                </div>
+            </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="row">
+            <div class="col">
+              <input formControlName="phone" type="text" class="form-control inputFields" placeholder="Contact">
+              <div *ngIf="submitted && userSignupForm.controls['phone'].errors" class="error">
+                <div class="text-danger"  *ngIf="userSignupForm.controls['phone'].errors['required']">
+                    Contact is required
+                </div>
+            </div>
+            </div>
+            <div class="col">
+              <input  formControlName="password" type="password" class="form-control inputFields" placeholder="Password">
+              <div *ngIf="submitted && userSignupForm.controls['password'].errors" class="error">
+                <div class="text-danger"  *ngIf="userSignupForm.controls['password'].errors['required']">
+                    Password is required
+                </div>
+            </div>
+            </div>
+          </div>
+
+
+         
+
+
+          <button class="signupBtn">Register</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+  <div class="container Bussiness_form">
+    <div class="row topRowRetailer">
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 loginColRetailer nopadding">
+
+
+        <h3 class="loginHeadingRetailer">
+          Welcome Back!
+        </h3>
+
+        <p class="loginParaRetailer">
+
+          To keep connected <br>
+          with us please login with
+          your personal info
+
+        </p> <br>
+
+        <button class="loginBtnRetailer" (click)="goToLogin()">Log In</button>
+
+
+
+
+
+
+      </div>
+      <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 colRightRetailer">
+
+        <h1 class="signupHeading">
+          Create Bussiness Account
+        </h1>
+
+        <form class="signupForm" [formGroup]="retailerSignupForm" (ngSubmit)="onRetailerFormSubmit()">
+          <div class="row">
+            <div class="col">
+              <input formControlName="shopName" type="text" class="form-control inputFieldsRetailer" placeholder="BussinessName">
+              <div *ngIf="submitted &&retailerSignupForm.controls['shopName'].errors" class="error">
+                <div class="text-danger"  *ngIf="retailerSignupForm.controls['shopName'].errors['required']">
+                    Business Name is required
+                </div>
+            </div>
+            </div>
+            <div class="col">
+              <input formControlName="email" type="text" class="form-control inputFieldsRetailer" placeholder="BussinessEmail">
+              <div *ngIf="submitted &&retailerSignupForm.controls['email'].errors" class="error">
+                <div class="text-danger"  *ngIf="retailerSignupForm.controls['email'].errors['required']">
+                    Business Email is required
+                </div>
+            </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="row">
+            <div class="col">
+              <input formControlName="phone" type="text" class="form-control inputFieldsRetailer" placeholder="BussinessContact">
+              <div *ngIf="submitted &&retailerSignupForm.controls['phone'].errors" class="error">
+                <div class="text-danger"  *ngIf="retailerSignupForm.controls['phone'].errors['required']">
+                    Contact Number is required
+                </div>
+            </div>
+            </div>
+            <div class="col">
+              <input formControlName="password" type="password" class="form-control inputFieldsRetailer" placeholder="BussinessPassword">
+              <div *ngIf="submitted &&retailerSignupForm.controls['password'].errors" class="error">
+                <div class="text-danger"  *ngIf="retailerSignupForm.controls['password'].errors['required']">
+                    Password is required
+                </div>
+            </div>
+            </div>
+          </div>
+          <button class="signupBtn">Register</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+

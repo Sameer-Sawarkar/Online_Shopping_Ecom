@@ -1,0 +1,61 @@
+<br>
+<ng-container *ngIf="products.length !=0">
+    <div class="container">
+        <div class="card-table">
+            <div class="card-product">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Sr.no</th>
+                            <th>Product Name</th>
+                            <th>Product Image</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <!-- <th>Quantity</th> -->
+                            <!-- <th>Total</th> -->
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of products, let i=index">
+                            <td>{{i+1}}</td>
+                            <td>{{item.name}}</td>
+                            <td><img src="{{item.imageUrl}}" style="width: 120px;" alt=""></td>
+                            <td style="width: 30%;">{{item.description}}</td>
+                            <td style="width: 15%;">{{item.price}}</td>
+                            <!-- <td style="width: 15%;">{{item.quantity}}</td> -->
+                            <!-- <td style="width: 15%;">{{item.total}}</td> -->
+                            <td>
+                                <button (click)="removeProduct(item)" class="btn btn-danger">
+                                    <fa-icon [icon]="faTrashAlt"></fa-icon>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td><button (click)="removeAllProduct()" class="btn btn-danger">Empty Cart</button></td>
+                            <td><button routerLink="/home" routerLinkActive="active" class="btn btn-warning">Shop More</button></td>
+                            <td><button (click)="navigateTopayment()" class="btn btn-success">Check Out</button></td>
+                            <td><strong>Total:{{allProducts}}</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </ng-container>
+    
+    
+    <ng-container *ngIf="products.length ==0">
+    <div class="container">
+        <div class="card">
+            <h4 class="card-title">My Cart</h4>
+        </div>
+        <div class="center">
+            <!-- <img src="" alt=""> -->
+            <h5>Your Cart is empty!</h5>
+            <h6>Add item to it now</h6>
+            <button routerLink="/home" routerLinkActive="active" class="btn btn-primary">Shop Now</button>
+        </div>
+    </div>
+    </ng-container>

@@ -1,0 +1,176 @@
+.row{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-left:5%;
+}
+
+
+.single-product select{
+   border: 1px solid #445464;
+    padding: 5px;
+}
+.single-product select:focus{
+    outline: none;
+}
+.single-product select{
+    display: block;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.single-product input{
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 20px;
+    margin-right: 10px;
+    border: 1px solid #005e89;
+}
+input:focus{
+    outline: none;
+}
+.single-product .fa{
+    color: #003049;
+    margin-left: 10px;
+}
+
+.single-product .page-btn{
+    color: #005e89;
+    /* border-color:1px solid  ; */
+    width:160px;
+    height:45px;
+    border: 3px solid #005e89;
+    border-radius: 10px;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.single-product .page-btn:hover{
+    color:white;
+    background-color:#005e89 ;
+
+}
+
+.single-product .prodName{
+    color:#00275e;
+}
+.single-product .productPrice{
+    color:#3d9469;
+}
+.productImg:hover{
+    transform:scale(1.3);
+
+}
+
+#Indicator{
+    width: 100px;
+    border: none;
+    background: #445464;
+    height: 3px;
+    margin-top: 8px;
+    transform: translateX(100px);
+    transition: transform 1s;
+}
+
+
+.course_card{
+	width: 20rem;
+	height:15rem;
+    /* border: #5E6C79 ; */
+	box-shadow: 2px 2px 0.08em;
+}
+
+
+
+.prod_img{
+    /* border:1px solid #5E6C79 ;*/
+    max-width: fit-content;
+
+}/* .prod_img:hover{
+	transform: scale(1.1);
+} */
+.prod{
+	color:#003049;
+	text-decoration:bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.price{
+    color:#2c6e49;
+    margin-top:1%;
+    padding-top: 2px;
+}
+
+
+
+.prod_card{
+	width:19rem;
+	height:26em;
+    border-radius: 4px;
+    /* border: #5E6C79 ; */
+	box-shadow: 1px 1px 0.08em;
+}
+.prod_category{
+    font-size: small;
+    color:#8d99ae;
+}
+/* .row-details{
+    
+   
+} */
+
+
+.prod_img{
+    /* border:1px solid #5E6C79 ;*/
+    max-width: 100%;
+    max-height:72%;
+
+}/* .prod_img:hover{
+	transform: scale(1.1);
+} */
+.prod{
+	color:#003049;
+	text-decoration:bold;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: -1%;
+}
+
+
+.price{
+    color:#2c6e49;
+    margin-top:1%;
+    padding-top: 2px;
+}
+.owl-carol-container{
+    padding-left: 5%;
+    margin-left:5%;
+}
+
+
+
+
+@media only screen and (max-width: 600px){
+    .row{
+        text-align: center;
+    }
+    .col-2, .col-3, .col-4{
+        flex-basis: 100%;
+    }
+    .single-product .row{
+        text-align: left;
+    }
+    .single-product .col-2{
+        padding: 20px 0;
+    }
+    .single-product h1{
+        font-size: 26px;
+        line-height: 32px;
+    }
+    .cart-info p{
+        display: none;
+    }
+}

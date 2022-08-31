@@ -14,7 +14,7 @@ import { faCoffee,faPencil ,faTrashAlt,faUserPen,faSearch,faSignOutAlt} from '@f
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'DotStore';
+  title = 'LnTMart';
 
   faCoffee = faCoffee;
   faPencil=faPencil;

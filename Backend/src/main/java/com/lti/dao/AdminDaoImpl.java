@@ -24,7 +24,7 @@ public class AdminDaoImpl implements AdminDao{
 	@Transactional
 	public Admin registerAdmin(Admin admin) {
 		// TODO Auto-generated method stub
-		System.out.println("Inside Retailer Dao");
+		System.out.println("Inside Admin Dao");
 		em.persist(admin);
 		return admin;
 	}

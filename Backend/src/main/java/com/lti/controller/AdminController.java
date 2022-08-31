@@ -69,7 +69,7 @@ public class AdminController {
 		
 		Admin exists = service.adminEmailExist(a.getEmail());
 		
-		System.out.println("Retailer exists:"+exists.getPassword());
+		System.out.println("Admin exists:"+exists.getPassword());
 		System.out.println("body user:"+a.getPassword());
 		
 		if(exists.getAdmin_id()!=0) {
@@ -77,7 +77,7 @@ public class AdminController {
 			//check password
 			if(a.getPassword().equals(exists.getPassword())) {
 				
-				return ResponseHandler.generateResponse("Admin Login Successful", HttpStatus.OK,exists);
+				return ResponseHandler.generateResponse("Admin Login Successful!", HttpStatus.OK,exists);
 			}
 			else {
 				//password matched 

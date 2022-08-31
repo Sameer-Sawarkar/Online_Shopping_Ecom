@@ -18,10 +18,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
@@ -74,11 +71,9 @@
           "configurations": {
             "production": {
               "browserTarget": "DotStore:build:production"
-              
             },
             "development": {
               "browserTarget": "DotStore:build:development"
-              
             }
           },
           "defaultConfiguration": "development"
@@ -87,7 +82,6 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "DotStore:build"
-           
           }
         },
         "test": {
@@ -97,16 +91,11 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-              
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "../node_modules/bootstrap/dist/css/bootstrap.min.css",
               "../node_modules/font-awesome/css/font-awesome.min.css",
               "src/styles.css"
-              
             ],
             "scripts": []
           }

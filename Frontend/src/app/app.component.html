@@ -1,16 +1,21 @@
 <head>
-  
-  <script src="https://kit.fontawesome.com/9c877a7a86.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <script
+    src="https://kit.fontawesome.com/9c877a7a86.js"
+    crossorigin="anonymous"
+  ></script>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
 </head>
 <body>
   <main>
-      <div class="container-fluid topNavbar">
-          <div class="row">
-
-          <!-- <nav *ngIf="userNav" class="navbar navbar-expand-lg topNavbar fixed-top">
+    <div class="container-fluid topNavbar">
+      <div class="row">
+        <!-- <nav *ngIf="userNav" class="navbar navbar-expand-lg topNavbar fixed-top">
               <a class="navbar-brand" href="#">
-                <img src="../assets/images/dotSTORE.png" width="200" height="70" class="d-inline-block align-top navImg" alt="">
+                <img src="../assets/images/dotSTORE.png" width="138" height="28" class="d-inline-block align-top navImg" alt="">
               </a>
             
                       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,226 +64,312 @@
                   </div>
               </nav> -->
 
-              <nav class="navbar navbar-expand-lg topNavbar fixed-top">
-                <a class="navbar-brand" href="#">
-                  <img src="../assets/images/dotSTORE.png" width="200" height="70" class="d-inline-block align-top navImg" alt="">
+        <nav class="navbar navbar-expand-lg topNavbar fixed-top">
+          <a class="navbar-brand" href="#">
+            <img
+              src="../assets/images/dotSTORE.png"
+              width="138"
+              height="28"
+              class="d-inline-block align-top navImg"
+              alt=""
+            />
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars togg"></i>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ms-auto navbar-fixed navList">
+              <li class="nav-item active myText">
+                <a
+                  class="nav-link myText"
+                  routerLink="/home"
+                  routerLinkActive="active"
+                  >Home
                 </a>
-              
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                            <i class="fas fa-bars togg"></i>
-                        </button>
-  
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                        <ul class="navbar-nav  ms-auto navbar-fixed navList">
-                            <li class="nav-item active myText">
-                                <a class="nav-link myText" routerLink="/home" routerLinkActive="active">Home </a>
-                            </li>
-  
-                              <li *ngFor="let c of categoryList" class="nav-item myText" (click)="navigateToprod(c.category_id)">
-                                
-                                <a class="nav-link myText" >{{c.name}}</a>
-                              </li>
+              </li>
 
-                              
-                            
-                        </ul>
-  
-                       
-          
-                            
-  
-                    <span class="right-content ">
-                      <a *ngIf="!showName" class="two-icons " href="#" routerLink="/login" routerLinkActive="active"><mat-icon>account_circle</mat-icon></a>
-                    
-                    <button *ngIf="showName" type="button"  routerLink="/user-profile" class="btn btn-outline-secondary">Hello {{userName}}</button>
-                        <!-- <a class="two-icons " href="#" routerLink="/login" routerLinkActive="active"><mat-icon>account_circle</mat-icon></a> -->
-                        <a class="two-icons" routerLink="cart">
-                            <mat-icon>add_shopping_cart</mat-icon>
-                            <div class="badge bg-danger">{{totalItemNumber}}</div>
-                          </a>
-                          <button type="button" class="btn btn-success btn-sm mx-2" data-bs-toggle="modal" (click)="logout()">
-                            <fa-icon [icon]="faSignOutAlt"></fa-icon>
-                          </button> 
-                       
-                  
-                    </span>
-         
-                       
-  
-                    </div>
-                </nav>
+              <li
+                *ngFor="let c of categoryList"
+                class="nav-item myText"
+                (click)="navigateToprod(c.category_id)"
+              >
+                <a class="nav-link myText">{{ c.name }}</a>
+              </li>
+            </ul>
 
+            <span class="right-content">
+              <a
+                *ngIf="!showName"
+                class="two-icons"
+                href="#"
+                routerLink="/login"
+                routerLinkActive="active"
+                ><mat-icon>account_circle</mat-icon></a
+              >
 
+              <button
+                *ngIf="showName"
+                type="button"
+                routerLink="/user-profile"
+                class="btn btn-outline-secondary"
+              >
+                Hello {{ userName }}
+              </button>
+              <!-- <a class="two-icons " href="#" routerLink="/login" routerLinkActive="active"><mat-icon>account_circle</mat-icon></a> -->
+              <a class="two-icons" routerLink="cart">
+                <mat-icon>add_shopping_cart</mat-icon>
+                <div class="badge bg-danger">{{ totalItemNumber }}</div>
+              </a>
+              <button
+                type="button"
+                class="btn btn-success btn-sm mx-2"
+                data-bs-toggle="modal"
+                (click)="logout()"
+              >
+                <fa-icon [icon]="faSignOutAlt"></fa-icon>
+              </button>
+            </span>
+          </div>
+        </nav>
 
-              <!--other nav bar-->
-              <nav *ngIf="retailerNav" class="navbar navbar-expand-lg topNavbar fixed-top">
-                <a class="navbar-brand" href="#">
-                  <img src="../assets/images/dotSTORE.png" width="200" height="70" class="d-inline-block align-top navImg" alt="">
-                </a>
-              
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                            <i class="fas fa-bars togg"></i>
-                        </button>
-  
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                        <ul class="navbar-nav  ms-auto navbar-fixed navList">
-                            <!-- <li class="nav-item active myText">
+        <!--other nav bar-->
+        <nav
+          *ngIf="retailerNav"
+          class="navbar navbar-expand-lg topNavbar fixed-top"
+        >
+          <a class="navbar-brand" href="#">
+            <img
+              src="../assets/images/dotSTORE.png"
+              width="138"
+              height="28"
+              class="d-inline-block align-top navImg"
+              alt=""
+            />
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars togg"></i>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ms-auto navbar-fixed navList">
+              <!-- <li class="nav-item active myText">
                                 <a class="nav-link myText" href="#">Home</a>
                               </li> -->
-                              <li class="nav-item myText">
-                                <a class="nav-link myText" href="#">Add Product</a>
-                              </li>
-                              <li class="nav-item myText">
-                                <a class="nav-link myText" routerLink="/all-products">Products</a>
-                              </li>
-                              <li class="nav-item myText">
-                                <a class="nav-link myText" href="#">Profile</a>
-                              </li>
-                              
-                           
-  
-                        </ul>
-  
-                       
-          
-                            
-  
-                    <span class="right-content ">
-                        <a *ngIf="!showName" class="two-icons " href="#" routerLink="/login" routerLinkActive="active"><mat-icon>account_circle</mat-icon></a>
-                      
-                      <button *ngIf="showName" type="button" routerLink="/retailer-profile" class="btn btn-outline-secondary">Hello {{userName}}</button>
-                      <button type="button" class="btn btn-success btn-sm mx-2" data-bs-toggle="modal" (click)="logout()">
-                        <fa-icon [icon]="faSignOutAlt"></fa-icon>
-                      </button>
-                    </span>
-                    
-                    </div>
-                </nav>
+              <li class="nav-item myText">
+                <a class="nav-link myText" href="#">Add Product</a>
+              </li>
+              <li class="nav-item myText">
+                <a class="nav-link myText" routerLink="/all-products"
+                  >Products</a
+                >
+              </li>
+              <li class="nav-item myText">
+                <a class="nav-link myText" href="#">Profile</a>
+              </li>
+            </ul>
 
-<!--other nav bar end-->
+            <span class="right-content">
+              <a
+                *ngIf="!showName"
+                class="two-icons"
+                href="#"
+                routerLink="/login"
+                routerLinkActive="active"
+                ><mat-icon>account_circle</mat-icon></a
+              >
 
-
-                <!--  Admin nav bar -->
-                <nav *ngIf="adminNav" class="navbar navbar-expand-lg topNavbar fixed-top">
-                  <a class="navbar-brand" href="#">
-                    <img src="../assets/images/dotSTORE.png" width="200" height="70" class="d-inline-block align-top navImg" alt="">
-                  </a>
-                
-                          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                              <i class="fas fa-bars togg"></i>
-                          </button>
-    
-                      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                          <ul class="navbar-nav  ms-auto navbar-fixed navList">
-                              <li class="nav-item active myText">
-                                  <a class="nav-link myText" href="#">Retailers</a>
-                                </li>
-                                <li class="nav-item myText">
-                                  <a class="nav-link myText" routerLink="/display-all-products">Products</a>
-                                </li>
-                                <li class="nav-item myText">
-                                  <a class="nav-link myText" href="#">Profile</a>
-                                </li>
-                                
-                          </ul>
-    
-                         
-            
-                              
-    
-                      <span class="right-content ">
-                          <a *ngIf="!showName" class="two-icons " href="#" routerLink="/login" routerLinkActive="active"><mat-icon>account_circle</mat-icon></a>
-                        
-                        <button *ngIf="showName" type="button" class="btn btn-outline-secondary">Hello Admin</button>
-                        <button type="button" class="btn btn-success btn-sm mx-2" data-bs-toggle="modal" (click)="logout()">
-                          <fa-icon [icon]="faSignOutAlt"></fa-icon>
-                        </button>
-                      </span>
-                      
-                      </div>
-                  </nav>
-                <!--  Admin nav bar end-->
-
-
-              
+              <button
+                *ngIf="showName"
+                type="button"
+                routerLink="/retailer-profile"
+                class="btn btn-outline-secondary"
+              >
+                Hello {{ userName }}
+              </button>
+              <button
+                type="button"
+                class="btn btn-success btn-sm mx-2"
+                data-bs-toggle="modal"
+                (click)="logout()"
+              >
+                <fa-icon [icon]="faSignOutAlt"></fa-icon>
+              </button>
+            </span>
           </div>
+        </nav>
 
+        <!--other nav bar end-->
+
+        <!--  Admin nav bar -->
+        <nav
+          *ngIf="adminNav"
+          class="navbar navbar-expand-lg topNavbar fixed-top"
+        >
+          <a class="navbar-brand" href="#">
+            <img
+              src="../assets/images/dotSTORE.png"
+              width="138"
+              height="28"
+              class="d-inline-block align-top navImg"
+              alt=""
+            />
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars togg"></i>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ms-auto navbar-fixed navList">
+              <li class="nav-item active myText">
+                <a class="nav-link myText" href="#">Retailers</a>
+              </li>
+              <li class="nav-item myText">
+                <a class="nav-link myText" routerLink="/display-all-products"
+                  >Products</a
+                >
+              </li>
+              <li class="nav-item myText">
+                <a class="nav-link myText" href="#">Profile</a>
+              </li>
+            </ul>
+
+            <span class="right-content">
+              <a
+                *ngIf="!showName"
+                class="two-icons"
+                href="#"
+                routerLink="/login"
+                routerLinkActive="active"
+                ><mat-icon>account_circle</mat-icon></a
+              >
+
+              <button
+                *ngIf="showName"
+                type="button"
+                class="btn btn-outline-secondary"
+              >
+                Hello Admin
+              </button>
+              <button
+                type="button"
+                class="btn btn-success btn-sm mx-2"
+                data-bs-toggle="modal"
+                (click)="logout()"
+              >
+                <fa-icon [icon]="faSignOutAlt"></fa-icon>
+              </button>
+            </span>
+          </div>
+        </nav>
+        <!--  Admin nav bar end-->
       </div>
+    </div>
 
+    <router-outlet></router-outlet>
 
+    <!-- Footer -->
+    <footer class="text-center text-lg-start storeFooter">
+      <section>
+        <div class="container">
+          <div class="row footerRow">
+            <div
+              class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6 footer-col"
+            >
+              <img
+                src="../assets/images/dotSTORE.png"
+                width="138"
+                height="28"
+                class="footerImg"
+                alt=""
+              />
+            </div>
 
+            <div
+              class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6 footer-col"
+            >
+              <h5 class="footer-heading">Quick Links</h5>
+              <br />
+              <ul class="footerList">
+                <li><a class="footerLinks" href="#">Home</a></li>
+                <li><a class="footerLinks" href="#">Term</a></li>
+                <li>
+                  <a class="footerLinks" href="#">Privacy &amp; Policy</a>
+                </li>
+                <li><a class="footerLinks" href="#">Blog</a></li>
+                <li><a class="footerLinks" href="#">Contact Us</a></li>
+              </ul>
+            </div>
+            <div
+              class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6 footer-col"
+            >
+              <h5 class="footer-heading">About Us</h5>
+              <br />
+              <ul class="footerList">
+                <li><a class="footerLinks" href="#">Our Story</a></li>
+                <li>
+                  <a class="footerLinks" href="#">Travel Blog &amp; Tips</a>
+                </li>
+                <li><a class="footerLinks" href="#">Working With Us</a></li>
+                <li><a class="footerLinks" href="#">Tour Guide</a></li>
+                <li><a class="footerLinks" href="#">Be Our Partner</a></li>
+              </ul>
+            </div>
+            <div
+              class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6 footer-col"
+            >
+              <h5 class="footer-heading">Support</h5>
+              <br />
+              <ul class="footerList">
+                <li><a class="footerLinks" href="#">Customer Support</a></li>
+                <li>
+                  <a class="footerLinks" href="#">Terms &amp; Conditions</a>
+                </li>
+                <li>
+                  <a class="footerLinks" href="#">Privacy &amp; Policy</a>
+                </li>
+                <li><a class="footerLinks" href="#">Forum</a></li>
+                <li><a class="footerLinks" href="#">Tour Guide</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <br />
 
+      <!-- Section: Links  -->
 
-
-      <router-outlet></router-outlet>
-
-
-              
-          
-
-<!-- Footer -->
-<footer class="text-center text-lg-start storeFooter">
-
-<section>
-<div class="container">
-<div class="row footerRow">
-  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6 footer-col">
-    <img src="../assets/images/dotSTORE.png" width="180" height="80" class="footerImg" alt="">
-  </div>
-
-  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6 footer-col">
-
-    <h5 class="footer-heading">Quick Links</h5>
-    <br>
-        <ul class="footerList">
-            <li><a class="footerLinks" href="#">Home</a></li>
-            <li><a class="footerLinks" href="#">Term</a></li>
-            <li><a class="footerLinks" href="#">Privacy &amp; Policy</a></li>
-            <li><a class="footerLinks" href="#">Blog</a></li>
-            <li><a class="footerLinks" href="#">Contact Us</a></li>
-         </ul>
-
-  </div>
-  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6 footer-col">
-    <h5 class="footer-heading">About Us</h5>
-    <br>
-    <ul class="footerList">
-        <li><a class="footerLinks" href="#">Our Story</a></li>
-        <li><a class="footerLinks" href="#">Travel Blog &amp; Tips</a></li>
-        <li><a class="footerLinks" href="#">Working With Us</a></li>
-        <li><a class="footerLinks" href="#">Tour Guide</a></li>
-        <li><a class="footerLinks" href="#">Be Our Partner</a></li>
-    </ul>
-    
-</div>
-  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6 footer-col">
-    <h5 class="footer-heading">Support</h5>
-    <br>
-        <ul class="footerList">
-            <li><a class="footerLinks" href="#">Customer Support</a></li>
-            <li><a class="footerLinks" href="#">Terms &amp; Conditions</a></li>
-            <li><a class="footerLinks" href="#">Privacy &amp; Policy</a></li>
-            <li><a class="footerLinks" href="#">Forum</a></li>
-            <li><a class="footerLinks" href="#">Tour Guide</a></li>
-         </ul>
-
-  </div>
- 
-</div>
-</div>
-
-
-
-</section>
-<br>
-
-
-<!-- Section: Links  -->
-
-  <!-- Grid container -->
-  <!-- <div class="container p-4 pb-0"> -->
-    <!-- Section: Social media -->
-    <!-- <section class="mb-4">
+      <!-- Grid container -->
+      <!-- <div class="container p-4 pb-0"> -->
+      <!-- Section: Social media -->
+      <!-- <section class="mb-4">
       <!-- Facebook -->
       <!-- <a
         class="btn btn-primary btn-floating m-1"
@@ -332,25 +423,20 @@
         ><i class="fab fa-github"></i
       ></a>
     </section> -->
-    <!-- Section: Social media -->
-  <!-- </div>
-  Grid container --> 
+      <!-- Section: Social media -->
+      <!-- </div>
+  Grid container -->
 
-  <!-- Copyright -->
-  <div class="text-center p-3 text-white" style="background-color: rgba(0, 0, 0, 0.5);">
-    © 2020 Copyright:&nbsp;
-    <a class="text-white" href="#">dotStore.com</a>
-  </div>
-  <!-- Copyright -->
-
-</footer>
-<!-- Footer -->
-
-
-
-   
-      
-      
-      
+      <!-- Copyright -->
+      <div
+        class="text-center p-3 text-white"
+        style="background-color: rgba(0, 0, 0, 0.5)"
+      >
+        © 2022 Copyright:&nbsp;
+        <a class="text-white" href="#">www.LntMart.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
   </main>
-  </body>
+</body>

@@ -1,4 +1,4 @@
-<br>
+<br />
 <!-- <div class="topRow">
   
       <div class="input-group mb-6 searchbar">
@@ -6,98 +6,110 @@
         <button class="btn btn-outline-secondary" type="button" id="button-addon2"><mat-icon>search</mat-icon></button>
       </div>
 </div> -->
-<br>
-<br>
+<br />
+<br />
 <div class="container topImage">
   <div class="row">
-   <img src="../assets/images/carousal2.jpeg" class="imgcarousel">
-   <span class="heading"><b>Explore vast variety of Products</b> </span>
-   <button class="btn-explore">Explore<mat-icon>arrow_right_alt</mat-icon></button>
-  </div>
-
-
-</div>
-
-<br>
-
-<div class="recentAdded">
-    <hr>
-    <h5 class="recentHeading">New Arrivals</h5>
-    <div class="owl-carol-container">
-    <owl-carousel-o [options]="customOptions">
-      <ng-container *ngFor="let p of prodList">
-        <ng-template carouselSlide [id]="p.name">
-          <div  class="card prod_card" (click)="navigateToDetails(p.product_id)">
-            <img src={{p.imageUrl}} class="card-img-top prod_img" alt="...">
-            <div class="card-body">
-              <p class="prod_category">{{p.category.name}}</p>
-              <h5 class="prod">{{p.name}}</h5>
-            <h6 class="price"><b>₹ {{p.price}}</b></h6> 
-              <!-- <a href="#" class="btn btn-sm cardbtn">View Details</a>&nbsp;&nbsp;&nbsp;
-              <a href="#" class="btn btn-sm cardbtn">cart</a> -->
-            </div>
-          </div>
-          <br>
-        </ng-template>
-      </ng-container>
-    </owl-carousel-o>
+    <img src="../assets/images/carousal2.jpeg" class="imgcarousel" />
+    <!-- <span class="heading"><b>Explore vast variety of Products</b> </span> -->
+    <button onclick="window.location.href='display-all-products';" class="btn-explore">
+      Explore<mat-icon>arrow_right_alt</mat-icon>
+    </button>
+    <!-- <button class="btn-explore">Explore<mat-icon>arrow_right_alt</mat-icon></button> -->
   </div>
 </div>
 
+<br />
+
 <div class="recentAdded">
-    <hr>
-    <h5 class="recentHeading">Best Seller</h5>
+  <hr />
+  <h5 class="recentHeading">New Arrivals</h5>
   <div class="owl-carol-container">
     <owl-carousel-o [options]="customOptions">
-      <ng-container *ngFor="let p of prodList | filter:test" >
+      <ng-container *ngFor="let p of prodList">
         <ng-template carouselSlide [id]="p.name">
-          <div  class="card prod_card" (click)="navigateToDetails(p.product_id)">
-            <img src={{p.imageUrl}} class="card-img-top prod_img" alt="...">
+          <div class="card prod_card" (click)="navigateToDetails(p.product_id)">
+            <img
+              src="{{ p.imageUrl }}"
+              class="card-img-top prod_img"
+              alt="..."
+            />
             <div class="card-body">
-              <p class="prod_category">{{p.category.name}}</p>
-              <h5 class="prod">{{p.name}}</h5>
-            <h6 class="price"><b>₹ {{p.price}}</b></h6> 
+              <p class="prod_category">{{ p.category.name }}</p>
+              <h5 class="prod">{{ p.name }}</h5>
+              <h6 class="price">
+                <b>₹ {{ p.price }}</b>
+              </h6>
               <!-- <a href="#" class="btn btn-sm cardbtn">View Details</a>&nbsp;&nbsp;&nbsp;
               <a href="#" class="btn btn-sm cardbtn">cart</a> -->
             </div>
           </div>
-          <br>
+          <br />
         </ng-template>
       </ng-container>
     </owl-carousel-o>
   </div>
-
 </div>
 
 <div class="recentAdded">
-    <hr>
-    <h5 class="recentHeading">Top Seller</h5>
-    <div class="owl-carol-container">
+  <hr />
+  <h5 class="recentHeading">Best Seller</h5>
+  <div class="owl-carol-container">
     <owl-carousel-o [options]="customOptions">
-      <ng-container *ngFor="let p of prodList">
+      <ng-container *ngFor="let p of prodList | filter: test">
         <ng-template carouselSlide [id]="p.name">
-          <div  class="card prod_card" (click)="navigateToDetails(p.product_id)">
-            <img src={{p.imageUrl}} class="card-img-top prod_img" alt="...">
+          <div class="card prod_card" (click)="navigateToDetails(p.product_id)">
+            <img
+              src="{{ p.imageUrl }}"
+              class="card-img-top prod_img"
+              alt="..."
+            />
             <div class="card-body">
-              <p class="prod_category">{{p.category.name}}</p>
-              <h5 class="prod">{{p.name}}</h5>
-            <h6 class="price"><b>₹ {{p.price}}</b></h6>
+              <p class="prod_category">{{ p.category.name }}</p>
+              <h5 class="prod">{{ p.name }}</h5>
+              <h6 class="price">
+                <b>₹ {{ p.price }}</b>
+              </h6>
               <!-- <a href="#" class="btn btn-sm cardbtn">View Details</a>&nbsp;&nbsp;&nbsp;
               <a href="#" class="btn btn-sm cardbtn">cart</a> -->
             </div>
           </div>
-          <br>
+          <br />
         </ng-template>
       </ng-container>
     </owl-carousel-o>
-    </div>
-
-
-
+  </div>
 </div>
 
+<div class="recentAdded">
+  <hr />
+  <h5 class="recentHeading">Top Seller</h5>
+  <div class="owl-carol-container">
+    <owl-carousel-o [options]="customOptions">
+      <ng-container *ngFor="let p of prodList">
+        <ng-template carouselSlide [id]="p.name">
+          <div class="card prod_card" (click)="navigateToDetails(p.product_id)">
+            <img
+              src="{{ p.imageUrl }}"
+              class="card-img-top prod_img"
+              alt="..."
+            />
+            <div class="card-body">
+              <p class="prod_category">{{ p.category.name }}</p>
+              <h5 class="prod">{{ p.name }}</h5>
+              <h6 class="price">
+                <b>₹ {{ p.price }}</b>
+              </h6>
+              <!-- <a href="#" class="btn btn-sm cardbtn">View Details</a>&nbsp;&nbsp;&nbsp;
+              <a href="#" class="btn btn-sm cardbtn">cart</a> -->
+            </div>
+          </div>
+          <br />
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </div>
+</div>
 
-
-
-<br>
-<br>
+<br />
+<br />

@@ -114,6 +114,16 @@ public class ProductDaoImpl implements ProductDao {
 
 
 
+	@Override
+	public Product deleteProduct(int id) {
+		// TODO Auto-generated method stub
+		ProductDao s=em.find(ProductDao.class,id);  
+		em.remove(s); 
+		return null;
+	}
+
+
+
 	
 
 }

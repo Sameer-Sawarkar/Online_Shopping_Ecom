@@ -1,0 +1,13 @@
+PRODUCT_ID,AVAILABLE,DESCRIPTION,IMAGEURL,NAME,PRICE,STOCK,CATEGORY_ID,RETAILER_ID
+2,1,4 GB RAM | 64 GB ROM | Expandable Upto 256 GB 17.32 cm (6.82 inch) HD+ Display 13MP + Depth Lens | 8MP Front Camera 6000 mAh Li-ion Polymer Battery Unisoc T610 Processor,http://localhost:8090/downloadFile/infinix-mobile.png,"Infinix HOT 12 Play (Champagne Gold, 64 GB)  (4 GB RAM)",8999,10,102,2
+5,1,Iqoo mobile,http://localhost:8090/downloadFile/iqoo-mobile.png,iqoo,15999,15,102,2
+9,1,Laptop,http://localhost:8090/downloadFile/hp.png,Hp,47999,10,101,2
+7,1,Moto,http://localhost:8090/downloadFile/moto.png,Motorola,27999,15,102,2
+8,1,Dell Laptop,http://localhost:8090/downloadFile/dell-laptop.png,Dell,57899,10,101,2
+11,1,Apple,http://localhost:8090/downloadFile/apple.png,Macbook max pro,129999,14,101,2
+14,1,Oppo tablet,http://localhost:8090/downloadFile/oppo-tab.png,Oppo Tablet,14999,10,103,2
+15,1,Appe,http://localhost:8090/downloadFile/apple-tab.png,apple tablet,78999,10,103,2
+3,1,Realme mobile,http://localhost:8090/downloadFile/realme-mob.png,Realme,11999,10,102,2
+13,1,Realme tablet,http://localhost:8090/downloadFile/realme-tab.png,Realme tablet,15799,10,103,2
+10,1,Laptop,http://localhost:8090/downloadFile/Asus.png,Asus,89999,15,101,2
+12,1,Asus,http://localhost:8090/downloadFile/asus-tablet.png,Asus Tablet,27499,10,103,2

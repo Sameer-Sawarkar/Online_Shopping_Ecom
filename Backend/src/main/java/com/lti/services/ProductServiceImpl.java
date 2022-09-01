@@ -52,5 +52,11 @@ public class ProductServiceImpl implements ProductService{
 		return dao.getProductsByRetailerId(retailer_id);
 	}
 
+	@Override
+	public Product deleteProduct(int id) {
+		// TODO Auto-generated method stub
+		return dao.deleteProduct(id);
+	}
+
 	
 }

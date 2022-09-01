@@ -1,0 +1,160 @@
+<!-- <div class="full">Add New Products</div>
+
+<form [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
+   
+<div class="full">
+   
+<div class="leftside">
+  
+   <br>
+    <label for="textId">Product Name</label><br>
+    <div >
+       <input type="text" id="pName" placeholder="Product Name" style="width: 99%; height: 30px;" formControlName="pName">
+    </div>
+    <p>Do not exceed 20characters when entering product name</p>
+    <br>
+    <div>
+    <label for="textId"  style="width: 99%; height: 30px;">Category</label>
+    <br>
+     <select name="" id="pCategory"  formControlName="pCategory" x>
+        <option *ngFor="let category of categoryList" [ngValue]="category">{{category.name}}</option>
+    </select>
+   </div>
+     <br>
+     <div>
+     <label >Quantity</label>
+     <br>
+     <input type="number" style="width: 99%; height: 30px;" placeholder="No.of Quantity" formControlName="pQuantity">
+     <br>
+   </div>
+   <br>
+     <label for="textId">Description</label>
+     <div>
+        <input type="text" placeholder="Description" style="width: 99%; height: 30px;" formControlName="pDescription">
+     </div>
+    <div>Do not exceed 100characters when entering product description</div>
+
+</div>
+<div class="rightside">
+    <br>
+    <label style="width: 99%; height: 30px;" >Product Images</label>
+    <br>
+    <button>click here to browse</button>
+     <br>
+     <br>
+     <label for="textId">Product Price</label>
+     <div>
+        <input type="number" style="width: 209%; height: 30px;" placeholder="Product Price" formControlName="pPrice">
+     </div>
+     <br>
+     <label for="textId">Availability</label>
+    <br>
+     <select name="" id="pAvailable" formControlName="pAvailable" x>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>       
+    </select>
+    <br>
+     <br>
+     <button type="submit">Add Product</button>  &nbsp;  &nbsp;    <button type="submit">Save Product</button>
+
+     <div class="col">
+        <input  type="text" class="form-control inputFields" placeholder="Email">
+    </div>
+    
+
+</div>
+</div>
+     <br>
+     <br>
+     
+ </form> 
+ -->
+
+
+
+<div class="contain">
+
+    <div class="wrapper">
+      <div class="contacts">
+        <h3>Add Product</h3>
+        <h4></h4>
+        
+      </div>
+  
+      <div class="form">
+        <h3>Add Product in Store</h3>
+        <form [formGroup]="addProductForm">
+          <p>
+            <label for="">Product Name</label>
+
+            <label *ngIf="submitted &&addProductForm.controls['pName'].errors" class="error">
+                <label class="text-danger"  *ngIf="addProductForm.controls['pName'].errors['required']"> Name is required</label>
+            </label>
+
+            <input  formControlName="pName" type="text" class="form-control inputFields" placeholder="Product Name">
+            
+           
+          <!-- </p> -->
+          <p>
+            <label for="">Price</label>
+            <label *ngIf="submitted &&addProductForm.controls['pPrice'].errors" class="error">
+                <label class="text-danger"  *ngIf="addProductForm.controls['pPrice'].errors['required']"> Price is required</label>
+            </label>
+            <input formControlName="pPrice" type="number" class="form-control inputFields" placeholder="Price">
+          </p>
+          
+          <p>
+            <label for="">Stock</label>
+            <label *ngIf="submitted &&addProductForm.controls['pQuantity'].errors" class="error">
+                <label class="text-danger"  *ngIf="addProductForm.controls['pQuantity'].errors['required']"> Enter Stock</label>
+            </label>
+            <input formControlName="pQuantity" type="number" class="form-control inputFields" placeholder="Stock">
+          </p>
+          <p>
+            <label for="">Category</label>
+            <label *ngIf="submitted &&addProductForm.controls['pCategory'].errors" class="error">
+                <label class="text-danger"  *ngIf="addProductForm.controls['pCategory'].errors['required']">Select Category</label>
+            </label>
+            <select formControlName="pCategory" class="form-select" aria-label="Default select example">
+                <option *ngFor="let category of categoryList" [ngValue]="category">{{category.name}}</option>
+              </select>
+          </p>
+          <p>
+            <label for="">Availability</label>
+            <label *ngIf="submitted &&addProductForm.controls['pAvailable'].errors" class="error">
+                <label class="text-danger"  *ngIf="addProductForm.controls['pAvailable'].errors['required']">Choose Avaiaility</label>
+            </label>
+            <select formControlName="pAvailable" class="form-select" aria-label="Default select example">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+               
+              </select>
+          </p>
+          <p>
+            <label for="">Product Description</label>
+            <label *ngIf="submitted &&addProductForm.controls['pDescription'].errors" class="error">
+                <label class="text-danger"  *ngIf="addProductForm.controls['pDescription'].errors['required']">Write Description</label>
+            </label>
+            <input formControlName="pDescription" type="text" class="form-control textFields" placeholder="Description">
+          </p>
+          <p>
+            <label for="">Image</label>
+            <input (change)="onChange($event)" type="file">
+            
+          </p>
+          <p>
+            <button class="upload-button" (click)="onUpload()">
+              Upload
+            </button>
+          </p>
+          
+          <!-- <img alt="xxx" class="xxx" [src]="imageUrl"> -->
+          <p>
+            <button type="submit" class="add-button" (click)="onSubmit()">Add Product</button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  

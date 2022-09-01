@@ -1,0 +1,83 @@
+<div class="contain">
+
+    <div class="wrapper">
+      <div class="contacts">
+        <h3>Edit Retailer</h3>
+        <h4>Edit Retailer Authentication Status</h4>
+        
+      </div>
+  
+      <div class="form">
+        <h3>Check Details</h3>
+        <form [formGroup]="retailerForm" (ngSubmit)="onSubmit()">
+          <p>
+            <label for="">Owner Name</label>
+
+            <label *ngIf="submitted &&retailerForm.controls['ownerName'].errors" class="error">
+                <label class="text-danger"  *ngIf="retailerForm.controls['ownerName'].errors['required']"> Name is required</label>
+            </label>
+
+            <input  formControlName="ownerName" type="text" [readonly]="disableField">
+          </p>
+
+          <p>
+            <label for="">Shop Name</label>
+
+            <label *ngIf="submitted &&retailerForm.controls['shopName'].errors" class="error">
+                <label class="text-danger"  *ngIf="retailerForm.controls['shopName'].errors['required']">Shop Name is required</label>
+            </label>
+
+            <input  formControlName="shopName" type="text" [readonly]="disableField">
+          </p>
+
+          <p>
+            <label for="">Email</label>
+
+            <label *ngIf="submitted &&retailerForm.controls['email'].errors" class="error">
+                <label class="text-danger"  *ngIf="retailerForm.controls['email'].errors['required']">Email is required</label>
+            </label>
+
+            <input  formControlName="email" type="text" [readonly]="disableField">
+          </p>
+           
+          <p>
+            <label for="">Phone</label>
+
+            <label *ngIf="submitted &&retailerForm.controls['phone'].errors" class="error">
+                <label class="text-danger"  *ngIf="retailerForm.controls['phone'].errors['required']">Phone is required</label>
+            </label>
+
+            <input  formControlName="phone" type="text" [readonly]="disableField">
+          </p>
+
+          <p>
+            <label for="">Address</label>
+
+            <label *ngIf="submitted &&retailerForm.controls['address'].errors" class="error">
+                <label class="text-danger"  *ngIf="retailerForm.controls['address'].errors['required']">Address is required</label>
+            </label>
+
+            <input  formControlName="address" type="text" [readonly]="disableField">
+          </p>
+          
+         
+       
+          <p>
+            <label for="">Authenticate</label>
+            <label *ngIf="submitted &&retailerForm.controls['authenticate'].errors" class="error">
+                <label class="text-danger"  *ngIf="retailerForm.controls['authenticate'].errors['required']">Choose status</label>
+            </label>
+            <select formControlName="authenticate" class="form-select" aria-label="Default select example">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+               
+              </select>
+          </p>
+          <p>
+            <button type="submit">Update</button>
+            <!-- <button>Send</button> -->
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>

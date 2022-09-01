@@ -1,0 +1,148 @@
+<br>
+<div class="form">
+
+    <div class="buttons">
+        <label for="chbox" class="customer btn"><span class="customer_btn"><b>Customer</b></span></label>
+        <label for="chbox" class="retailer btn"><span class="bussiness_btn"><b>Retailer</b></span></label>
+        <label for="chbox" class="retailer btn" routerLink="/admin-login"><span class="bussiness_btn"><b>Admin</b></span></label>
+    </div>
+    
+    <input type="checkbox" id="chbox">
+    <div class="layer"></div>
+    <div class="layer2"></div>
+    <br>
+
+    
+    
+
+    <div class="container customer_form">
+        <div class="row topRow">
+
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 signUpCol">
+
+                <h1 class="signupHeading">
+                    Log-In
+                </h1>
+                <h5 class="loginSubHeading">To explore a wide varieties of Product Range</h5>
+
+                <form class="loginForm" [formGroup]="userLoginForm" (ngSubmit)="onSubmit()">
+                    <div class="row">
+                        <div class="col">
+                            <input formControlName="email" type="text" class="form-control inputFields" placeholder="Email">
+                            <div *ngIf="submitted &&userLoginForm.controls['email'].errors" class="error">
+                                <div class="text-danger"  *ngIf="userLoginForm.controls['email'].errors['required']">
+                                    Email is required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <input formControlName="password" type="password" class="form-control inputFields" placeholder="Password">
+                            <div *ngIf="submitted &&userLoginForm.controls['password'].errors" class="error">
+                                <div class="text-danger"  *ngIf="userLoginForm.controls['password'].errors['required']">
+                                    Password is required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="signupBtn">LogIn</button>
+                </form>
+            </div>
+
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 nopadding colRight">
+
+
+                <h3 class="loginHeading">
+                    Hello Friends!
+                </h3>
+
+                <p class="loginPara">
+
+                    Enter your personal details<br>
+                    and start your journey with Us
+
+                </p> <br>
+
+                <button class="loginBtn" (click)="goToSignUp()">Register</button>
+
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!--Retailer Form-->
+
+
+
+    <div class="container Bussiness_form">
+        <div class="row topRow">
+
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 signUpCol">
+
+                <h1 class="signupHeading">
+                    Log-In Bussiness
+                </h1>
+                <h5 class="loginSubHeading">To grow your Bussiness</h5>
+
+                <form class="loginForm" [formGroup]="retailerLoginForm" (ngSubmit)="onRetailerFormSubmit()">
+                    <div class="row">
+                        <div class="col">
+                            <input formControlName="email" type="text" class="form-control inputFields" placeholder="Email">
+                            <div *ngIf="submitted &&retailerLoginForm.controls['email'].errors" class="error">
+                                <div class="text-danger"  *ngIf="retailerLoginForm.controls['email'].errors['required']">
+                                    Email is required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <input formControlName="password" type="password" class="form-control inputFields" placeholder="Password">
+                            <div *ngIf="submitted &&retailerLoginForm.controls['password'].errors" class="error">
+                                <div class="text-danger"  *ngIf="retailerLoginForm.controls['password'].errors['required']">
+                                    Password is required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="signupBtn">LogIn</button>
+                </form>
+            </div>
+
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 nopadding colRight">
+
+
+                <h3 class="loginHeading">
+                    Hello Friends!
+                </h3>
+
+                <p class="loginPara">
+
+                    Enter your bussiness details<br>
+                    and start your profesional journey with Us
+
+                </p> <br>
+
+                <button class="loginBtn" (click)="goToSignUp()">Register</button>
+
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>

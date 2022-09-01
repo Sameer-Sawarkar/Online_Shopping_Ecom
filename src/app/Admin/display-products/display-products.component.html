@@ -1,0 +1,26 @@
+
+<div class="topRow">
+  
+    <div class="input-group mb-6 searchbar">
+      <input type="text" [(ngModel)]="test" class="form-control" placeholder="Search" aria-label="search" aria-describedby="button-addon2">
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2"><mat-icon>search</mat-icon></button>
+    </div>
+  </div>
+  
+  
+  <br>
+  
+  <div class="row align-items-center justify-content-center align-self-center row-details">
+      <div *ngFor="let p of prodList | filter:test"  class="col-lg-2 col-md-6 col-sm-12 col-xs-12" style="margin:20px; margin-left:125px;">
+        <div  class="card prod_card">
+          <img src={{p.imageUrl}} class="card-img-top prod_img" alt="...">
+          <div class="card-body">
+            <p class="prod_category">{{p.category.name}}</p>
+            <h5 class="prod">{{p.name}}</h5>
+          <h6 class="price"><b>Rs {{p.price}}</b></h6>
+            <!-- <a href="#" class="btn btn-sm cardbtn">View Details</a>&nbsp;&nbsp;&nbsp;
+            <a href="#" class="btn btn-sm cardbtn">cart</a> -->
+          </div>
+        </div>
+      </div>
+  

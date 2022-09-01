@@ -1,0 +1,83 @@
+
+<div class="contain">
+
+    <div class="wrapper">
+      <div class="contacts">
+        <h3>User Profile</h3>
+        <h4></h4>
+        
+      </div>
+  
+      <div class="form">
+        <h3>Update Profile</h3>
+        <form [formGroup]="retailerForm">
+          <p>
+            <label for="">Shop Name</label>
+
+            <label *ngIf="submitted &&retailerForm.controls['shopName'].errors" class="error">
+                <label class="text-danger"  *ngIf="retailerForm.controls['shopName'].errors['required']"> Shop Name is required</label>
+            </label>
+
+            <input  formControlName="shopName" type="text">
+            </p>
+
+
+            <p>
+                <label for="">Owner Name</label>
+    
+                <label *ngIf="submitted &&retailerForm.controls['ownerName'].errors" class="error">
+                    <label class="text-danger"  *ngIf="retailerForm.controls['ownerName'].errors['required']"> Owner Name is required</label>
+                </label>
+    
+                <input  formControlName="ownerName" type="text">
+                </p>
+
+            <p>
+
+                <p>
+                    <label for="">Email</label>
+        
+                    <label *ngIf="submitted &&retailerForm.controls['email'].errors" class="error">
+                        <label class="text-danger"  *ngIf="retailerForm.controls['email'].errors['required']"> Email is required</label>
+                    </label>
+        
+                    <input  formControlName="email" type="text">
+                    </p>
+
+                    <p>
+                        <label for="">Phone</label>
+            
+                        <label *ngIf="submitted &&retailerForm.controls['phone'].errors" class="error">
+                            <label class="text-danger"  *ngIf="retailerForm.controls['phone'].errors['required']"> Phone is required</label>
+                        </label>
+            
+                        <input  formControlName="phone" type="text">
+                    </p>
+
+                    <p>
+                        <label for="">Address</label>
+            
+                        <label *ngIf="submitted &&retailerForm.controls['address'].errors" class="error">
+                            <label class="text-danger"  *ngIf="retailerForm.controls['address'].errors['required']"> Address is required</label>
+                        </label>
+            
+                        <input  formControlName="address" type="text">
+                    </p>
+
+                    <p>
+                        <label for="">Authentication</label>
+            
+                        <label *ngIf="submitted &&retailerForm.controls['authenticate'].errors" class="error">
+                            <label class="text-danger"  *ngIf="retailerForm.controls['authenticate'].errors['required']"> Address is required</label>
+                        </label>
+            
+                        <input  formControlName="authenticate" type="text" [disabled]="diableAuth">
+                    </p>
+
+                <p>
+            <button type="submit" (click)="onFormSubmit()">Update Profile</button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>

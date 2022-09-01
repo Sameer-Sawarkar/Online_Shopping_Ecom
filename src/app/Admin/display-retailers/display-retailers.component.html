@@ -1,0 +1,149 @@
+
+
+<div>
+    <h3 style="margin-left:auto;margin-right:auto;">All Retailers</h3>
+    <h4></h4>
+    
+  </div>
+
+  <div class="container">
+    <div class="container input-group form-group my-3">
+      <div class="input-group-prepend">
+          <span class="input-group-text py-3" id="basic-addon1">
+             
+              <fa-icon [icon]="faSearch"></fa-icon>
+          </span>
+        </div>
+      <input type="text" name="search" [(ngModel)]="test" class="form-control" placeholder="Search Retailer">
+      <span class="glyphicon glyphicon-search form-control-feedback"></span>
+  </div>
+  </div>
+ 
+
+
+<table class="styled-table" style="border:1px solid black;margin-left:auto;margin-right:auto;">
+    
+    <thead>
+        <tr>
+            <th>Retailer ID</th>
+            <th>Shop Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Authenticated</th>
+            <th>Actions</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let retailer of retailerList | filter:test">
+            <td>{{retailer.retailer_id}}</td>
+            <td>{{retailer.shopName}}</td>
+            <td>{{retailer.email}}</td>
+            <td>{{retailer.phone}}</td>
+            <td>{{retailer.authenticate ? 'Yes' : 'No'}}</td>
+            <td>
+            
+                <!-- <button type="button" class="btn btn-success btn-sm mx-2" data-bs-toggle="modal" (click)="onEdit(retailer)" data-bs-target="#exampleModal">
+                    <fa-icon [icon]="faPencil"></fa-icon>
+                  </button> -->
+                  
+                  <button type="button" class="btn btn-success btn-sm mx-2" data-bs-toggle="modal" (click)="editRetailerForm(retailer)">
+                    <fa-icon [icon]="faPencil"></fa-icon>
+                  </button>
+               
+                  
+            </td>
+           
+        </tr>
+    </tbody>
+</table>
+
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body mx-3">
+        <div class="form">
+            <h3>Retailer Details</h3>
+            <form [formGroup]="retailerForm" (ngSubmit)="editRetailer()">
+
+                <p>
+                    <label for="">ID</label>
+    
+                    <input [(ngModel)]="editRetailerObject.retailer_id" formControlName="retailer_id" type="text" >
+                </p>  
+                <p>
+                    <label for="">Owner Name</label>
+    
+                    <input [(ngModel)]="editRetailerObject.ownerName" formControlName="ownerName" type="text" >
+                </p>  
+              <p>
+                <label for="">Shop Name</label>
+
+                <input [(ngModel)]="editRetailerObject.shopName" formControlName="shopName" type="text">
+            </p>
+            <p>
+                <label for="">Email</label>
+
+                <input [(ngModel)]="editRetailerObject.email" formControlName="email" type="text">
+            </p>
+            <p>
+                <label for="">Phone</label>
+
+                <input [(ngModel)]="editRetailerObject.phone" formControlName="phone" type="text">
+            </p>
+            <p>
+                <label for="">Address</label>
+
+                <input [(ngModel)]="editRetailerObject.address" formControlName="address" type="text">
+            </p>
+             
+              
+              <p>
+                <label for="">Authenticate</label>
+              
+                <select class="form-select" formControlName="authenticate" aria-label="Default select example">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                   
+                  </select>
+              </p>
+
+              <button type="submit" class="btn btn-success btn-sm mx-2" data-mdb-dismiss="modal"
+              aria-label="Close">Save Details</button>
+            
+            </form>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  

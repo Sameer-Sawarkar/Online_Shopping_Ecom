@@ -1,0 +1,72 @@
+
+<div class="contain">
+
+    <div class="wrapper">
+      <div class="contacts">
+        <h3>User Profile</h3>
+        <h4></h4>
+        
+      </div>
+  
+      <div class="form">
+        <h3>Update Profile</h3>
+        <form [formGroup]="userForm">
+          <p>
+            <label for="">User Name</label>
+
+            <label *ngIf="submitted &&userForm.controls['name'].errors" class="error">
+                <label class="text-danger"  *ngIf="userForm.controls['name'].errors['required']"> Name is required</label>
+            </label>
+
+            <input  formControlName="name" type="text">
+            </p>
+
+            <p>
+              <label for="">Email</label>
+  
+              <label *ngIf="submitted &&userForm.controls['email'].errors" class="error">
+                  <label class="text-danger"  *ngIf="userForm.controls['email'].errors['required']"> Email required</label>
+              </label>
+  
+              <input  formControlName="email" type="text">
+              </p>
+
+              <p>
+                <label for="">Phone</label>
+    
+                <label *ngIf="submitted &&userForm.controls['phone'].errors" class="error">
+                    <label class="text-danger"  *ngIf="userForm.controls['phone'].errors['required']"> Phone Number required</label>
+                </label>
+    
+                <input  formControlName="phone" type="text">
+                </p>
+            
+                <p>
+                  <label for="">Address</label>
+      
+                  <label *ngIf="submitted &&userForm.controls['address'].errors" class="error">
+                      <label class="text-danger"  *ngIf="userForm.controls['address'].errors['required']"> Address required</label>
+                  </label>
+      
+                  <input  formControlName="address" type="text">
+                  </p>
+
+          <p>
+            <label for="">Gender</label>
+            <label *ngIf="submitted &&userForm.controls['gender'].errors" class="error">
+                <label class="text-danger"  *ngIf="userForm.controls['gender'].errors['required']">Choose Gender</label>
+            </label>
+            <select formControlName="gender" class="form-select" aria-label="Default select example">
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+               
+              </select>
+          </p>
+
+          <p>
+            <button type="submit" (click)="onFormSubmit()">Update Profile</button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
